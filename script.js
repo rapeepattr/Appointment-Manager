@@ -77,6 +77,18 @@ function setUpTime() {
     }, second)
 }
 
+function callDataInStore() {
+    if (localStorage.getItem('countdown')) {
+        inputContainer.hidden = true
+        saveCountDown = JSON.parse(localStorage.getItem('countdown'))
+        countDownTitle = saveCountDown.title
+        countDownDate = saveCountDown.date
+        countDownValue = new Date(countDownDate).getTime()
+        setUpTime()
+    }
+}
+
+callDataInStore()
 
 
 
