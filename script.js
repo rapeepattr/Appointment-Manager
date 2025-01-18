@@ -88,7 +88,19 @@ function callDataInStore() {
     }
 }
 
+function reset() {
+    localStorage.removeItem('countdown')
+    countDownElement.hidden = true
+    completeElement.hidden = true
+    inputContainer.hidden = false
+    clearInterval(countDownActive)
+
+    countDownTitle = ''
+    countDownDate = ''
+}
+
 callDataInStore()
 
-
+countDownButtonElement.addEventListener('click', reset)
+completeButtonElement.addEventListener('click', reset)
 
